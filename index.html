@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de Razas de Gatos</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-ink">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#inicio">Gatopedia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+              aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#dato">Dato curioso</a></li>
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero py-5">
+    <div class="container py-4">
+      <h1 class="display-4">Galeria de gatos</h1>
+      <p class="lead col-lg-7">
+        Busca por nombre, país de origen o tipo de pelaje. Encuentra a tu gato favorito.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="dato" class="container py-4">
+      <div class="dato-card p-4 rounded-4 d-flex flex-column flex-md-row align-items-md-center gap-3">
+        <div class="flex-grow-1">
+          <h2 class="h5 mb-2">Dato curioso</h2>
+          <p id="datoTexto" class="mb-0">Cargando dato…</p>
+        </div>
+        <button id="btnDato" class="btn btn-warning fw-semibold">Otro dato</button>
+      </div>
+    </section>
+
+    <section id="catalogo" class="container pb-5">
+      <h2 class="mb-3">Catálogo de razas</h2>
+
+      <form class="row g-3 mb-4" role="search" onsubmit="return false">
+        <div class="col-md-5">
+          <label for="filtroNombre" class="form-label">Nombre de la raza</label>
+          <input type="search" id="filtroNombre" class="form-control" placeholder="Ej: Siamese">
+        </div>
+        <div class="col-md-4">
+          <label for="filtroPais" class="form-label">País de origen</label>
+          <select id="filtroPais" class="form-select">
+            <option value="">Todos</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="filtroPelaje" class="form-label">Pelaje</label>
+          <select id="filtroPelaje" class="form-select">
+            <option value="">Todos</option>
+          </select>
+        </div>
+      </form>
+
+      <p id="contador" class="text-muted" aria-live="polite"></p>
+
+      <!-- js inserta tarjetas -->
+      <div id="listaRazas" class="row g-4"></div>
+    </section>
+  </main>
+
+  <footer class="bg-ink text-light py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
