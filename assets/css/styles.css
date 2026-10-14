@@ -55,10 +55,3 @@ h1, h2, h3, h4, h5, .navbar-brand {
   outline: 3px solid #f2b632;
   outline-offset: 2px;
 }
-
-.raza-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.raza-card img {
-  transition: transform 0.3s ease;
-}
